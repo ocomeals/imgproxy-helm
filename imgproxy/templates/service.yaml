@@ -7,7 +7,8 @@ metadata:
 {{- if .Values.annotations }}
 {{ toYaml .Values.annotations | indent 4 }}
 {{- end }}
-  labels:
+{{- end }}
+labels:
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
